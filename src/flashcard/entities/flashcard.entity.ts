@@ -13,9 +13,9 @@ export class Flashcard {
   @Field(() => Int, { description: 'ID da Matéria do flashcard' })
   user_id: number;
 
-  @ManyToOne(() => Subject, (subject) => subject.flashcards, { nullable: true, onDelete: 'CASCADE' })
-  @Field(() => Int, { description: 'Matéria do Flashcard' })
-  subject: Subject;
+  @Column()
+  @Field(() => Int, { description: 'ID da Matéria do Flashcard' })
+  subject_id: number;
 
   @Column()
   @Field(() => String, { description: 'Titulo do flashcard' })

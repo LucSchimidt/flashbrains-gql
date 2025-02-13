@@ -14,12 +14,12 @@ export class SubjectResolver {
   }
 
   @Query(() => [Subject], { name: 'findAllSubjects' })
-  findAll() {
+  findAllSubjects() {
     return this.subjectService.findAll();
   }
 
   @Query(() => Subject, { name: 'findOneSubject' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
+  findOneSubject(@Args('id', { type: () => Int }) id: number) {
     return this.subjectService.findOne(id);
   }
 

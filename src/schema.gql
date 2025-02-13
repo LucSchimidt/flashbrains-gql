@@ -2,6 +2,29 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Flashcard {
+  """ID gerado"""
+  id: String!
+
+  """ID da Matéria do flashcard"""
+  user_id: Int!
+
+  """ID da Matéria do Flashcard"""
+  subject_id: Int!
+
+  """Titulo do flashcard"""
+  title: String!
+
+  """Pergunta do flashcard"""
+  question: String!
+
+  """Resposta do flashcard"""
+  answer: String!
+
+  """Resposta do flashcard"""
+  slug: String!
+}
+
 type Subject {
   """Id da matéria"""
   id: Int!
@@ -19,32 +42,9 @@ type Subject {
   slug: String!
 }
 
-type Flashcard {
-  """ID gerado"""
-  id: String!
-
-  """ID da Matéria do flashcard"""
-  user_id: Int!
-
-  """Matéria do Flashcard"""
-  subject: Int!
-
-  """Titulo do flashcard"""
-  title: String!
-
-  """Pergunta do flashcard"""
-  question: String!
-
-  """Resposta do flashcard"""
-  answer: String!
-
-  """Resposta do flashcard"""
-  slug: String!
-}
-
 type Query {
-  findAll: [Flashcard!]!
-  findOne(id: Int!): Flashcard!
+  findAllFlashcards: [Flashcard!]!
+  findOneFlashcard(id: Int!): Flashcard!
   findAllSubjects: [Subject!]!
   findOneSubject(id: Int!): Subject!
 }
@@ -66,7 +66,7 @@ input CreateFlashcardInput {
   user_id: Int!
 
   """ID da Matéria do flashcard"""
-  subject: String
+  subject_id: Int
 
   """Pergunta do flashcard"""
   question: String!
@@ -86,7 +86,7 @@ input UpdateFlashcardInput {
   user_id: Int
 
   """ID da Matéria do flashcard"""
-  subject: String
+  subject_id: Int
 
   """Pergunta do flashcard"""
   question: String
