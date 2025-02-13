@@ -1,0 +1,135 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Subject {
+  """Id da matéria"""
+  id: Int!
+
+  """ID do usuário da matéria"""
+  user_id: Int!
+
+  """Titulo da matéria"""
+  title: String!
+
+  """Descrição da matéria"""
+  description: String!
+
+  """Slug da pagina da matéria"""
+  slug: String!
+}
+
+type Flashcard {
+  """ID gerado"""
+  id: String!
+
+  """ID da Matéria do flashcard"""
+  user_id: Int!
+
+  """Matéria do Flashcard"""
+  subject: Int!
+
+  """Titulo do flashcard"""
+  title: String!
+
+  """Pergunta do flashcard"""
+  question: String!
+
+  """Resposta do flashcard"""
+  answer: String!
+
+  """Resposta do flashcard"""
+  slug: String!
+}
+
+type Query {
+  findAll: [Flashcard!]!
+  findOne(id: Int!): Flashcard!
+  findAllSubjects: [Subject!]!
+  findOneSubject(id: Int!): Subject!
+}
+
+type Mutation {
+  createFlashcard(createFlashcardInput: CreateFlashcardInput!): String!
+  updateFlashcard(updateFlashcardInput: UpdateFlashcardInput!): String!
+  removeFlashcard(id: Int!): String!
+  createSubject(createSubjectInput: CreateSubjectInput!): String!
+  updateSubject(updateSubjectInput: UpdateSubjectInput!): String!
+  removeSubject(id: Int!): String!
+}
+
+input CreateFlashcardInput {
+  """Titulo do flashcard"""
+  title: String!
+
+  """ID do Usuário do flashcard"""
+  user_id: Int!
+
+  """ID da Matéria do flashcard"""
+  subject: String
+
+  """Pergunta do flashcard"""
+  question: String!
+
+  """Resposta do flashcard"""
+  answer: String!
+
+  """Resposta do flashcard"""
+  slug: String!
+}
+
+input UpdateFlashcardInput {
+  """Titulo do flashcard"""
+  title: String
+
+  """ID do Usuário do flashcard"""
+  user_id: Int
+
+  """ID da Matéria do flashcard"""
+  subject: String
+
+  """Pergunta do flashcard"""
+  question: String
+
+  """Resposta do flashcard"""
+  answer: String
+
+  """Resposta do flashcard"""
+  slug: String
+  id: Int!
+}
+
+input CreateSubjectInput {
+  """ID do usuário da matéria"""
+  user_id: Int!
+
+  """Titulo da matéria"""
+  title: String!
+
+  """Titulo da matéria"""
+  flashcards: String
+
+  """Descrição da matéria"""
+  description: String!
+
+  """Slug da pagina da matéria"""
+  slug: String!
+}
+
+input UpdateSubjectInput {
+  """ID do usuário da matéria"""
+  user_id: Int
+
+  """Titulo da matéria"""
+  title: String
+
+  """Titulo da matéria"""
+  flashcards: String
+
+  """Descrição da matéria"""
+  description: String
+
+  """Slug da pagina da matéria"""
+  slug: String
+  id: Int!
+}
