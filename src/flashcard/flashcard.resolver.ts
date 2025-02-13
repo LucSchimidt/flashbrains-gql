@@ -14,13 +14,13 @@ export class FlashcardResolver {
     return this.flashcardService.create(createFlashcardInput);
   }
 
-  @Query(() => [Flashcard], { name: 'findAll' })
-  findAll(): Promise<Flashcard[]> {
+  @Query(() => [Flashcard], { name: 'findAllFlashcards' })
+  findAllFlashcards(): Promise<Flashcard[]> {
     return this.flashcardService.findAll();
   }
 
-  @Query(() => Flashcard, { name: 'findOne' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
+  @Query(() => Flashcard, { name: 'findOneFlashcard' })
+  findOneFlashcard(@Args('id', { type: () => Int }) id: number) {
     return this.flashcardService.findOne(id);
   }
 

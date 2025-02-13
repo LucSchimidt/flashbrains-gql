@@ -9,8 +9,8 @@ export class CreateFlashcardInput {
   @Field(() => Int, { description: 'ID do Usuário do flashcard' })
   user_id: number;
 
-  @Field(() => String, { nullable:true, description: 'ID da Matéria do flashcard' })
-  subject?: Subject;
+  @Field(() => Int, { nullable:true, description: 'ID da Matéria do flashcard' })
+  subject_id?: number;
 
   @Field(() => String, { description: 'Pergunta do flashcard' })
   question: string;
@@ -20,5 +20,4 @@ export class CreateFlashcardInput {
 
   @Field(() => String, { description: 'Resposta do flashcard' })
   slug: string;
-
 }

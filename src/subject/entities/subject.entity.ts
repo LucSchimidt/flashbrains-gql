@@ -13,9 +13,6 @@ export class Subject {
   @Field(() => Int, { description: 'ID do usuário da matéria' })
   user_id: number;
 
-  @OneToMany(() => Flashcard, (flashcard) => flashcard.subject, { nullable: true })
-  flashcards: Flashcard[];
-
   @Column()
   @Field(() => String, { description: 'Titulo da matéria' })
   title: string;
